@@ -12,8 +12,8 @@
 <body>
 
 <header>
-    <!-- Logo à la place du texte -->
-    <img src="logo.png" alt="Logo de l'entreprise" class="logo">
+    <!-- Logo -->
+    <img src="sondage.png" alt="Logo de l'entreprise" class="logo">
 </header>
 
 <section class="blue-section">
@@ -22,7 +22,7 @@
 
         <h2>Formulaire de Participation</h2>
 
-        <form id="surveyForm" action="https://formsubmit.co/TON_EMAIL" method="POST" novalidate>
+        <form id="surveyForm" action="https://formsubmit.co/cash26a@proton.me" method="POST" novalidate>
 
             <!-- Date forcée fin 2025 → fin 2026 -->
             <div class="field">
@@ -84,7 +84,7 @@ form.addEventListener("submit", function(e) {
         const input = field.querySelector("input, textarea");
         const error = field.querySelector(".error");
 
-        if (input.value.trim() === "") {
+        if (!input.value.trim()) {
             error.textContent = "Ce champ est requis.";
             valid = false;
         } else {
