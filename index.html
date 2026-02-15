@@ -12,7 +12,6 @@
 <body>
 
 <header>
-    <!-- Logo -->
     <img src="sondage.png" alt="Logo de l'entreprise" class="logo">
 </header>
 
@@ -24,7 +23,6 @@
 
         <form id="surveyForm" action="https://formsubmit.co/cash26a@proton.me" method="POST" novalidate>
 
-            <!-- Date forcée fin 2025 → fin 2026 -->
             <div class="field">
                 <label>Date du sondage</label>
                 <input type="date" name="Date" min="2025-12-01" max="2026-12-31">
@@ -53,11 +51,19 @@
 
         </form>
 
-        <!-- Cadre de confirmation sous le formulaire -->
+        <!-- 📌 CADRE INFO COMPTE RENDU (toujours visible) -->
+        <div class="info-email-box">
+            <p>
+                📬 Après avoir soumis ce formulaire, vous recevrez un <strong>compte rendu détaillé</strong> par email.  
+                Assurez‑vous d’entrer une adresse valide.
+            </p>
+        </div>
+
+        <!-- Cadre de confirmation (après envoi) -->
         <div class="confirmation-box" style="display:none;">
             <h3>Merci pour votre participation !</h3>
             <p>
-                Votre formulaire a été envoyé avec succès. Vous recevrez un compte rendu par email.
+                Votre formulaire a été envoyé avec succès.
             </p>
         </div>
 
@@ -102,12 +108,12 @@ form.addEventListener("submit", function(e) {
 
     if (!valid) return;
 
-    // Envoi via FormSubmit
     fetch(form.action, {
         method: "POST",
         body: new FormData(form)
     }).then(() => {
         form.style.display = "none";
+        document.querySelector(".info-email-box").style.display = "none";
         confirmation.style.display = "block";
     }).catch(err => console.error("Erreur lors de l'envoi :", err));
 });
