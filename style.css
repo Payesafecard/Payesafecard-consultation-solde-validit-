@@ -1,4 +1,4 @@
-/* === RESET GLOBAL === */
+/* === RESET === */
 * {
     margin: 0;
     padding: 0;
@@ -25,9 +25,9 @@ header .logo {
     height: auto;
 }
 
-/* SECTION FORMULAIRE BLEU */
+/* SECTION BLEUE */
 .blue-section {
-    background-color: #003A8C;
+    background-color: #003A8C; /* un tout petit peu plus foncé */
     padding: 110px 20px;
     display: flex;
     justify-content: center;
@@ -57,7 +57,7 @@ header .logo {
     font-weight: 700;
 }
 
-/* CHAMPS */
+/* FIELDS */
 .field {
     margin-bottom: 28px;
 }
@@ -82,9 +82,11 @@ textarea {
     transition: all 0.25s ease;
 }
 
-textarea {resize: none;}
+textarea {
+    resize: none;
+}
 
-/* Champ date */
+/* Date input pro */
 input[type="date"] {
     padding: 18px 20px;
     font-size: 17px;
@@ -102,7 +104,6 @@ textarea::placeholder {
     font-size: 16px;
 }
 
-/* Focus */
 input:focus,
 textarea:focus {
     outline: none;
@@ -110,7 +111,7 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(255,255,255,0.35);
 }
 
-/* Message d’erreur */
+/* Error messages */
 .error {
     margin-top: 8px;
     font-size: 15px;
@@ -124,7 +125,7 @@ textarea:focus {
     margin-bottom: 24px;
 }
 
-/* BOUTON ENVOI */
+/* Submit button */
 button {
     width: 100%;
     padding: 22px;
@@ -143,6 +144,28 @@ button {
 button:hover {
     transform: translateY(-2px);
     background: linear-gradient(90deg, #f3f3f3 0%, #e0e0e0 100%);
+}
+
+/* 🔹 CADRE INFO COMPTE RENDU */
+.info-email-box {
+    background-color: rgba(255,255,255,0.95);
+    border-left: 4px solid #ffffff;
+    border-right: 4px solid #ffffff;
+    border-radius: 10px;
+    margin-top: 25px;
+    padding: 18px 20px;
+    color: #111827;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.info-email-box p {
+    line-height: 1.5;
+}
+
+.info-email-box strong {
+    font-weight: 600;
 }
 
 /* Confirmation */
@@ -182,10 +205,6 @@ footer {
         padding: 38px 28px;
     }
 
-    .form-card h2 {
-        font-size: 26px;
-    }
-
     label,
     input,
     textarea,
@@ -193,9 +212,10 @@ footer {
         font-size: 16px;
     }
 
+    .info-email-box,
     .confirmation-box {
-        padding: 24px 20px;
         font-size: 16px;
+        padding: 24px 22px;
     }
 }
 
@@ -208,10 +228,6 @@ footer {
         padding: 32px 18px;
     }
 
-    .form-card h2 {
-        font-size: 24px;
-    }
-
     label,
     input,
     textarea,
@@ -219,8 +235,9 @@ footer {
         font-size: 15px;
     }
 
+    .info-email-box,
     .confirmation-box {
-        padding: 20px 15px;
         font-size: 15px;
+        padding: 20px 16px;
     }
 }
