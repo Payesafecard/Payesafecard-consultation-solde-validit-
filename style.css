@@ -1,4 +1,4 @@
-/* --- RESET --- */
+/* === RESET GLOBAL === */
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +11,13 @@ body {
     color: #111827;
 }
 
-/* HEADER avec logo */
+/* HEADER */
 header {
     background-color: #ffffff;
     text-align: center;
-    padding: 40px 20px;
+    padding: 38px 20px;
     border-bottom: 1px solid #e5e7eb;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 7px rgba(0,0,0,0.04);
 }
 
 header .logo {
@@ -25,13 +25,13 @@ header .logo {
     height: auto;
 }
 
-/* SECTION BLEUE */
+/* SECTION FORMULAIRE BLEU */
 .blue-section {
-    background-color: #003A8C; /* bleu légèrement plus foncé */
-    padding: 120px 20px;
+    background-color: #003A8C;
+    padding: 110px 20px;
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 /* CARTE FORMULAIRE */
@@ -39,10 +39,10 @@ header .logo {
     width: 100%;
     max-width: 540px;
     background-color: #0046B3;
-    padding: 50px 45px;
+    padding: 48px 42px;
     border-radius: 18px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+    transition: transform 0.3s ease;
 }
 
 .form-card:hover {
@@ -52,19 +52,19 @@ header .logo {
 .form-card h2 {
     text-align: center;
     color: white;
-    margin-bottom: 50px;
-    font-weight: 700;
+    margin-bottom: 48px;
     font-size: 28px;
+    font-weight: 700;
 }
 
 /* CHAMPS */
 .field {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: white;
     font-weight: 500;
     font-size: 18px;
@@ -73,11 +73,10 @@ label {
 input,
 textarea {
     width: 100%;
-    padding: 22px;
+    padding: 20px;
     border-radius: 12px;
     border: 1px solid #d1d5db;
     font-size: 17px;
-    font-family: 'Roboto', sans-serif;
     background-color: #ffffff;
     color: #111827;
     transition: all 0.25s ease;
@@ -95,7 +94,7 @@ input[type="date"] {
     color: #111827;
 }
 
-/* Placeholders visibles */
+/* Placeholders lisibles */
 input::placeholder,
 textarea::placeholder {
     color: #6b7280;
@@ -111,9 +110,8 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(255,255,255,0.35);
 }
 
-/* Messages d'erreur */
+/* Message d’erreur */
 .error {
-    display: block;
     margin-top: 8px;
     font-size: 15px;
     color: #fde68a;
@@ -123,14 +121,14 @@ textarea:focus {
 .checkbox {
     color: white;
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
-/* Bouton */
+/* BOUTON ENVOI */
 button {
     width: 100%;
     padding: 22px;
-    margin-top: 25px;
+    margin-top: 20px;
     background: linear-gradient(90deg, #ffffff 0%, #e0e0e0 100%);
     color: #003A8C;
     border: none;
@@ -139,7 +137,7 @@ button {
     font-size: 17px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 button:hover {
@@ -147,33 +145,25 @@ button:hover {
     background: linear-gradient(90deg, #f3f3f3 0%, #e0e0e0 100%);
 }
 
-/* Cadre de confirmation sous le formulaire */
+/* Confirmation */
 .confirmation-box {
     background-color: rgba(255,255,255,0.95);
     color: #111827;
-    padding: 30px 35px;
-    border-radius: 16px;
+    padding: 32px 36px;
+    border-radius: 18px;
     margin-top: 35px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    font-size: 17px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.22);
     text-align: center;
-    transition: all 0.4s ease;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.confirmation-box.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .confirmation-box h3 {
-    margin-bottom: 14px;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .confirmation-box p {
+    font-size: 17px;
     line-height: 1.6;
 }
 
@@ -181,7 +171,7 @@ button:hover {
 footer {
     background-color: white;
     text-align: center;
-    padding: 32px;
+    padding: 28px;
     border-top: 1px solid #e5e7eb;
     font-size: 16px;
 }
@@ -189,7 +179,7 @@ footer {
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
     .form-card {
-        padding: 40px 30px;
+        padding: 38px 28px;
     }
 
     .form-card h2 {
@@ -204,8 +194,8 @@ footer {
     }
 
     .confirmation-box {
+        padding: 24px 20px;
         font-size: 16px;
-        padding: 28px 25px;
     }
 }
 
@@ -215,7 +205,7 @@ footer {
     }
 
     .form-card {
-        padding: 35px 20px;
+        padding: 32px 18px;
     }
 
     .form-card h2 {
@@ -230,7 +220,7 @@ footer {
     }
 
     .confirmation-box {
-        font-size: 15px;
         padding: 20px 15px;
+        font-size: 15px;
     }
 }
