@@ -1,0 +1,236 @@
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafb;
+    color: #111827;
+}
+
+/* HEADER avec logo */
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header .logo {
+    max-width: 220px;
+    height: auto;
+}
+
+/* SECTION BLEUE */
+.blue-section {
+    background-color: #003A8C; /* bleu légèrement plus foncé */
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* CARTE FORMULAIRE */
+.form-card {
+    width: 100%;
+    max-width: 540px;
+    background-color: #0046B3;
+    padding: 50px 45px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-2px);
+}
+
+.form-card h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+/* CHAMPS */
+.field {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #111827;
+    transition: all 0.25s ease;
+}
+
+textarea {resize: none;}
+
+/* Champ date */
+input[type="date"] {
+    padding: 18px 20px;
+    font-size: 17px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    color: #111827;
+}
+
+/* Placeholders visibles */
+input::placeholder,
+textarea::placeholder {
+    color: #6b7280;
+    opacity: 1;
+    font-size: 16px;
+}
+
+/* Focus */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.35);
+}
+
+/* Messages d'erreur */
+.error {
+    display: block;
+    margin-top: 8px;
+    font-size: 15px;
+    color: #fde68a;
+}
+
+/* Checkbox */
+.checkbox {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Bouton */
+button {
+    width: 100%;
+    padding: 22px;
+    margin-top: 25px;
+    background: linear-gradient(90deg, #ffffff 0%, #e0e0e0 100%);
+    color: #003A8C;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #f3f3f3 0%, #e0e0e0 100%);
+}
+
+/* Cadre de confirmation sous le formulaire */
+.confirmation-box {
+    background-color: rgba(255,255,255,0.95);
+    color: #111827;
+    padding: 30px 35px;
+    border-radius: 16px;
+    margin-top: 35px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    font-size: 17px;
+    text-align: center;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.confirmation-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.confirmation-box h3 {
+    margin-bottom: 14px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.confirmation-box p {
+    line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 32px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .form-card {
+        padding: 40px 30px;
+    }
+
+    .form-card h2 {
+        font-size: 26px;
+    }
+
+    label,
+    input,
+    textarea,
+    button {
+        font-size: 16px;
+    }
+
+    .confirmation-box {
+        font-size: 16px;
+        padding: 28px 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header .logo {
+        max-width: 180px;
+    }
+
+    .form-card {
+        padding: 35px 20px;
+    }
+
+    .form-card h2 {
+        font-size: 24px;
+    }
+
+    label,
+    input,
+    textarea,
+    button {
+        font-size: 15px;
+    }
+
+    .confirmation-box {
+        font-size: 15px;
+        padding: 20px 15px;
+    }
+}

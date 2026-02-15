@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de Sondage</title>
+
+    <!-- Police Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+    <!-- Logo à la place du texte -->
+    <img src="logo.png" alt="Logo de l'entreprise" class="logo">
+</header>
+
+<section class="blue-section">
+
+    <div class="form-card">
+
+        <h2>Formulaire de Participation</h2>
+
+        <form id="surveyForm" action="https://formsubmit.co/TON_EMAIL" method="POST" novalidate>
+
+            <!-- Date forcée fin 2025 → fin 2026 -->
+            <div class="field">
+                <label>Date du sondage</label>
+                <input type="date" name="Date" min="2025-12-01" max="2026-12-31">
+                <small class="error"></small>
+            </div>
+
+            <div class="field">
+                <label>Nom complet</label>
+                <input type="text" name="Nom complet" placeholder="Ex : Jean Dupont">
+                <small class="error"></small>
+            </div>
+
+            <div class="field">
+                <label>Votre avis</label>
+                <textarea name="Avis" rows="5" placeholder="Écrivez votre réponse ici..."></textarea>
+                <small class="error"></small>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="conditions">
+                <label for="conditions">J'accepte la politique de confidentialité</label>
+                <small class="error"></small>
+            </div>
+
+            <button type="submit">Envoyer le formulaire</button>
+
+        </form>
+
+        <!-- Cadre de confirmation sous le formulaire -->
+        <div class="confirmation-box" style="display:none;">
+            <h3>Merci pour votre participation !</h3>
+            <p>
+                Votre formulaire a été envoyé avec succès. Vous recevrez un compte rendu par email.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Entreprise de Sondage — Tous droits réservés
+</footer>
+
+<script>
+const form = document.getElementById("surveyForm");
+const fields = form.querySelectorAll(".field");
+const checkbox = document.getElementById("conditions");
+const confirmation = document.querySelector(".confirmation-box");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let valid = true;
+
+    fields.forEach(field => {
+        const input = field.querySelector("input, textarea");
+        const error = field.querySelector(".error");
+
+        if (input.value.trim() === "") {
+            error.textContent = "Ce champ est requis.";
+            valid = false;
+        } else {
+            error.textContent = "";
+        }
+    });
+
+    if (!checkbox.checked) {
+        checkbox.parentElement.querySelector(".error").textContent =
+            "Vous devez accepter les conditions.";
+        valid = false;
+    } else {
+        checkbox.parentElement.querySelector(".error").textContent = "";
+    }
+
+    if (!valid) return;
+
+    // Envoi via FormSubmit
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form)
+    }).then(() => {
+        form.style.display = "none";
+        confirmation.style.display = "block";
+    }).catch(err => console.error("Erreur lors de l'envoi :", err));
+});
+</script>
+
+</body>
+</html>
